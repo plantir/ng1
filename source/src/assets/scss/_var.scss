@@ -1,4 +1,4 @@
-$iranSans-font-path         :   "/fonts/IranSans";
-$material-icon-font-path    :   "/fonts/material-icon";
-$fa-font-path               :   "/fonts/font-awesome";
-$roboto-font-path           :   "~materialize-css/dist/fonts/roboto/";
+@import './font';
+@import "~materialize-css/sass/components/color";
+$primary-color:color("blue","base");
+@import "~materialize-css/sass/components/variables";

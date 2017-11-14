@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ROOT = path.resolve(__dirname, 'src');
+const assets = path.join(ROOT, 'assets')
 
 /**
  * Webpack Plugins
@@ -8,6 +9,7 @@ const ROOT = path.resolve(__dirname, 'src');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: ROOT,
@@ -112,7 +114,11 @@ module.exports = {
                 }
             }
         }),
-        new ExtractTextPlugin('css/style.css')
+        new ExtractTextPlugin('css/style.css'),
+        new CopyWebpackPlugin([{
+            from: assets,
+            to: 'assets'
+        }])
     ],
 
     entry: {
