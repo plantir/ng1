@@ -1,8 +1,8 @@
 # ng1
 clone the project <br>
 <pre>
-run npm i <br>
-run npm i -g .<br>
+run npm i 
+run npm i -g .
 </pre>
 and use ng1 as global
 
