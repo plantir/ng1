@@ -20,7 +20,7 @@
             "type": "node",
             "request": "launch",
             "args": [
-                "g", "c", "test/header"
+                "g", "c", "test/app-header"
             ],
             "name": "Launch Program",
             "program": "${workspaceFolder}\\bin\\demo.js"
