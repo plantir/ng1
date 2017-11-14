@@ -1,7 +1,9 @@
 # ng1
-clone the project
-run npm i
-run npm i -g .
+clone the project <br>
+<pre>
+run npm i <br>
+run npm i -g .<br>
+</pre>
 and use ng1 as global
 
 for create new project:
