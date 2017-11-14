@@ -2,7 +2,7 @@ class %nameUpper%Controller {
     name: string = '%name%';
 }
 
-import "%name%.component.scss";
+import '%name%.component.scss';
 
 export class %nameUpper% implements ng.IComponentOptions {
     static selector = '%name%';
