@@ -5,7 +5,7 @@ class %nameUpper%Controller {
 import './%name%.component.scss';
 
 export class %nameUpper% implements ng.IComponentOptions {
-    static selector = '%nameUpper%';
+    static selector = '%selectorName%';
     static template = require('./%name%.component.html');
     static bindings = {
     };
