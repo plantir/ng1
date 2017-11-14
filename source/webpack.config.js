@@ -67,6 +67,9 @@ module.exports = {
                         {
                             loader: "sass-loader",
                             options: {
+                                includePaths: [
+                                    'node_modules', './src/assets/scss'
+                                ],
                                 sourceMap: true,
                                 minimize: true
                             }
