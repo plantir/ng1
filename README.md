@@ -20,13 +20,20 @@ open localhost:9000
 
 for create component:
 <pre>
-ng1 g c contactUs/components/test
+ng1 g c contact-us/components/test
 </pre>
-this make a test component in folder src/app/contactUs/components
+this make a test component in folder src/app/contact-us/components
 
 
 for create module:
 <pre>
-ng1 g m contactUs 
+ng1 g m contact-us 
 </pre>
-this make a module and a route in folder src/app/contactUs
+this make a module and a route in folder src/app/contact-us
+
+
+for create Service:
+<pre>
+ng1 g s contact-us 
+</pre>
+this make a Service in folder src/app/contact-us

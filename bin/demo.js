@@ -21,13 +21,16 @@ if (opp == "g") {
             const module = require('../lib/module')
             module.generate(name, dist)
             break
+        case "s":
+            const service = require('../lib/service')
+            service.generate(name, dist)
+            break
 
         default:
             break;
     }
-}
-else if(opp == "new"){
-    var name =  args[1];
+} else if (opp == "new") {
+    var name = args[1];
     const source = require('../lib/source')
     source.generate(name)
 }
