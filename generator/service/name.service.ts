@@ -24,7 +24,9 @@ export interface I%nameUpper%Service {
 }
 export class %nameUpper%Service {
     static selector = '$%name%';
-    constructor(private $http: ng.IHttpService, private $q: ng.IQService, private myConstant: IMyConstant) { }
+    constructor(private $http: ng.IHttpService, private $q: ng.IQService, private myConstant: IMyConstant) { 
+        'ngInject';
+    }
 
     async save(data: I%nameUpper%Full) {
         try {
