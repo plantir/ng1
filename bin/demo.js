@@ -25,6 +25,10 @@ if (opp == "g") {
             const service = require('../lib/service')
             service.generate(name, dist)
             break
+        case "f":
+            const factory = require('../lib/factory')
+            factory.generate(name, dist)
+            break
 
         default:
             break;

@@ -37,3 +37,9 @@ for create Service:
 ng1 g s contact-us 
 </pre>
 this make a Service in folder src/app/contact-us
+
+for create Factory:
+<pre>
+ng1 g f contact-us 
+</pre>
+this make a Factory in folder src/app/contact-us
