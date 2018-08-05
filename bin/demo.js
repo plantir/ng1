@@ -8,8 +8,8 @@ console.log(args);
 var opp = args[0]
 if (opp == "g") {
     var switchType = args[1]
-    var source = process.cwd() + "\\src\\app"
-    var dist = "src/app/" + args[2]
+    var source = process.cwd() + "\\src\\App"
+    var dist = "src/App/" + args[2]
     var nameArray = args[2].split("/")
     var name = nameArray[nameArray.length - 1]
     switch (switchType) {
