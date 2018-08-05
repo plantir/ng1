@@ -1,9 +1,7 @@
 import { IMyConstant } from '../../core/core.constant';
 import { IHttpPromise } from 'angular';
 export interface I%nameUpper% {
-    name?: string;
-    email?: string;
-    message?: string;
+    id:number;
 }
 
 export interface I%nameUpper%Service {
