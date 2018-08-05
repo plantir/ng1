@@ -1,0 +1,564 @@
+@import 'var';
+login-modal {
+    width: 460px;
+    max-width: 100%;
+    min-width: 100%;
+    .header-title{
+        text-align: center;
+        font-size: 1.075rem;
+        background: $primary-color;
+        color: #fff;
+        position: relative;
+        padding: 1rem 20px;
+        @include respond-to(medium){
+            padding: 1rem 20px;
+        }
+        @include respond-to(large){
+            padding: 1rem 70px;
+        }
+    }
+    .register-container{
+        padding: 0 20px;
+        @include respond-to(medium){
+            padding: 0 40px;
+        }
+        @include respond-to(large){
+            padding: 0 70px;
+
+        }
+    }
+    .forget-password{
+        margin: 1rem 0;
+        a{
+            color: $secondary-color;
+        }
+    }
+    .la-close{
+        position: absolute;
+        right: 24px;
+        top: 0;
+        bottom: 0;
+        width: 28px;
+        height: 28px;
+        margin: auto 0;
+        font-size: 1.35rem;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        font-weight: bold;
+        padding: 3px;
+        cursor: pointer;
+        color: #fff;
+    }
+    .sponsers{
+        display: flex;
+        .item{
+            width: 50%;
+            .item-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: .5;
+                .image{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 110px;
+                    height: 50px;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+                .text{
+                    text-align: center;
+                    color: #000;
+                }
+                .icon{
+                    text-align: center;
+                    font-size: 2.875rem;
+                }
+            }
+            &.active > div{
+                opacity: 1;
+            }
+            &:not(:last-child){
+                border-left: 1px solid #c1c1c1;
+            }
+        }
+    }
+    .submit{
+        .md-button{
+            display: block;
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+    }
+    .social-login{
+        color: #fff;
+        .google-auth{
+            cursor: pointer;
+            display: flex;
+            padding: 0 1rem;
+            background: #db4437;
+            height: 36px;
+            color: #fff;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+            font-size: .875rem;
+            @include respond-to(medium){
+                font-size: 1rem;
+            }
+            i.la{
+                font-size: 2rem;
+            }
+        }
+    }
+    // .form-group{
+    //     position: relative;
+    //     i.la.la-eye{
+    //         position: absolute;
+    //         top: 31px;
+    //         left: 10px;
+    //         font-size: 1.525rem;
+    //     }
+    // }
+    // .header {
+    //     background: #eaeaea;
+    //     text-align: center;
+    //     padding-top: 1rem;
+    //     .title {
+    //         h3 {
+    //             font-weight: 600;
+    //             font-size: 1.125rem;
+    //         }
+    //     }
+    //     .la-close{
+    //         position: absolute;
+    //         left: 8px;
+    //         top: 8px;
+    //         font-size: 1.35rem;
+    //         border: 1px solid #333;
+    //         border-radius: 100%;
+    //         padding: 3px;
+    //         cursor: pointer;
+    //         color: #333;
+    //         &:hover{
+    //             color: $secondary-color;
+    //             border-color: $secondary-color;
+    //         }
+    //     }
+    // }
+    // .login-email,
+    // .login-mobile,
+    // .login-google {
+    //     padding: .675rem 3rem 0rem;
+    // }
+    // a.secondary {
+    //     color: $secondary-color !important;
+    //     opacity: .8;
+    //     &:hover {
+    //         color: $secondary-color !important;
+    //         opacity: 1;
+    //     }
+    // }
+    // .signup {
+    //     text-align: center;
+    //     padding: 1.5rem 0;
+    // }
+    // label {
+    //     color: #999;
+    //     padding-right: 1rem;
+    //     font-size: .875rem;
+    //     &:after {
+    //         content: " *";
+    //         color: $secondary-color;
+    //         opacity: .5;
+    //     }
+    // }
+    // .submit {
+    //     margin: 1rem 0;
+    //     .md-button {
+    //         display: block;
+    //         width: 100%;
+    //         margin: 0;
+    //     }
+    // }
+    // .social-login {
+    //     margin-top: 1rem;
+    //     color: color("red", "darken-1");
+    //     a {
+    //         width: 100%;
+    //         border: 1px solid color("red", "darken-1");
+    //         padding: 0.5rem 1rem;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         border-radius: 45px;
+    //         align-items: center;
+    //         color: color("red", "darken-1");
+    //         cursor: pointer;
+    //         i {
+    //             font-size: 1.575rem;
+    //         }
+    //     }
+    // }
+    // .form-control {
+    //     border-radius: 45px;
+    //     height: 30px;
+    // }
+    // .tab-nav {
+    //     white-space: nowrap;
+    //     overflow: auto;
+    //     box-shadow: inset 0 -2px 0 0 #eeeeee;
+    //     width: 100%;
+    //     list-style: none;
+    //     padding: 0;
+    //     margin: 0;
+    //     padding-bottom: 2px;
+    //     display: flex;
+    //     font-size: .875rem;
+    //     li {
+    //         display: inline-flex;
+    //         margin: 0 2px;
+    //         height: 40px;
+    //         flex: 1;
+    //         align-items: center;
+    //         &:first-child {
+    //             margin-right: 0;
+    //         }
+    //         &:last-child {
+    //             margin-left: 0;
+    //         }
+    //         a {
+    //             display: flex;
+    //             flex-direction: column;
+    //             color: #7a7a7a;
+    //             width: 100%;
+    //             height: 100%;
+    //             justify-content: center;
+    //             align-items: center;
+    //             text-transform: uppercase;
+    //             position: relative;
+    //             font-weight: 500;
+    //             transition: all;
+    //             transition-duration: .25s;
+    //             i.la {
+    //                 font-size: 2.475rem;
+    //                 vertical-align: middle;
+    //                 @include respond-to(large) {
+    //                     margin-bottom: .5rem;
+    //                     font-size: 1.875rem;
+    //                 }
+    //             }
+    //             >span {
+    //                 // display: none;
+    //                 // @include respond-to(large) {
+    //                 //     display: initial;
+    //                 // }
+    //             }
+    //             &:after {
+    //                 content: "";
+    //                 height: 2px;
+    //                 position: absolute;
+    //                 width: 100%;
+    //                 left: 0;
+    //                 bottom: -2px;
+    //                 transition: all;
+    //                 transition-duration: 250ms;
+    //                 transform: scale(0);
+    //                 background: $secondary-color;
+    //             }
+    //         }
+    //         &.active {
+    //             color: $secondary-color;
+    //             a {
+    //                 color: $secondary-color;
+    //                 &:after {
+    //                     transform: scale(1);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+// login-modal {
+//     position: relative;
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     .modal-close {
+//         width: 40px;
+//         height: 40px;
+//         position: absolute;
+//         left: 10px;
+//         top: 10px;
+//         color: #fff !important;
+//         @include respond-to(xsmall-and-down) {
+//             color: #000 !important;
+//         }
+//         i {
+//             font-size: 40px;
+//         }
+//     }
+//     .login-form {
+//         display: flex;
+//         &>div {
+//             width: 50%;
+//             @include respond-to(xsmall-and-down) {
+//                 width: 100%;
+//             }
+//         }
+//         .description {
+//             background-image: url('/assets/img/Login.jpg');
+//             background-size: cover;
+//             background-repeat: no-repeat;
+//             padding: 8rem 2rem;
+//             h1 {
+//                 font-size: 2rem;
+//                 text-align: center;
+//                 color: #fff;
+//                 position: relative;
+//                 margin-bottom: 2rem;
+//                 &:after {
+//                     content: "";
+//                     width: 60px;
+//                     height: 2px;
+//                     background: #fff;
+//                     position: absolute;
+//                     bottom: -12px;
+//                     left: 0;
+//                     right: 0;
+//                     margin: 0 auto;
+//                 }
+//             }
+//             p {
+//                 font-size: 1.725rem;
+//                 text-align: center;
+//                 color: #fff;
+//                 margin-top: 4rem;
+//             }
+//             @include respond-to(xsmall-and-down) {
+//                 display: none
+//             }
+//         }
+//         .form-content {
+//             padding: 3rem;
+//             .title {
+//                 font-size: 2.75rem;
+//                 font-weight: 700;
+//                 margin-bottom: 1.3rem;
+//             }
+//             .desc {
+//                 margin-bottom: 2rem;
+//                 a {
+//                     color: $primary-color;
+//                 }
+//             }
+//             .remember-me {
+//                 margin-bottom: 1rem;
+//                 md-checkbox {
+//                     margin: 0;
+//                 }
+//             }
+//             [dir=rtl] & md-input-container {
+//                 label {
+//                     backface-visibility: hidden;
+//                 }
+//                 &.md-icon-right {
+//                     padding-left: 0;
+//                     >md-icon:last-of-type {
+//                         right: auto;
+//                         left: 4px;
+//                         top: 0px;
+//                         color: #aaa;
+//                         i.la {
+//                             font-size: 24px;
+//                             color: #555;
+//                         }
+//                     }
+//                 }
+//             }
+//             .social-login {
+//                 margin-top: 2rem;
+//                 .md-button {
+//                     width: 70px;
+//                     height: 30px;
+//                     font-size: 20px;
+//                     border-radius: 20px;
+//                     display: inline-flex;
+//                     justify-content: center;
+//                     align-items: center;
+//                     backface-visibility: hidden;
+//                 }
+//             }
+//         }
+//     }
+//     .register-form {
+//         .modal-close {
+//             right: 10px;
+//             top: 10px;
+//             @include respond-to(xsmall-and-down) {
+//                 left: 10px;
+//                 right: auto;
+//             }
+//         }
+//         display: flex;
+//         &>div {
+//             width: 50%;
+//             @include respond-to(xsmall-and-down) {
+//                 width: 100%;
+//             }
+//         }
+//         .description {
+//             background-image: url('/assets/img/Login.jpg');
+//             background-size: cover;
+//             background-repeat: no-repeat;
+//             padding: 8rem 2rem;
+//             h1 {
+//                 font-size: 2rem;
+//                 text-align: center;
+//                 color: #fff;
+//                 position: relative;
+//                 margin-bottom: 2rem;
+//                 &:after {
+//                     content: "";
+//                     width: 60px;
+//                     height: 2px;
+//                     background: #fff;
+//                     position: absolute;
+//                     bottom: -12px;
+//                     left: 0;
+//                     right: 0;
+//                     margin: 0 auto;
+//                 }
+//             }
+//             p {
+//                 font-size: 1.725rem;
+//                 text-align: center;
+//                 color: #fff;
+//                 margin-top: 4rem;
+//             }
+//             @include respond-to(xsmall-and-down) {
+//                 display: none
+//             }
+//         }
+//         .form-content {
+//             padding: 1.1rem 2rem;
+//             .title {
+//                 font-size: 1.75rem;
+//                 font-weight: 700;
+//                 margin-bottom: 1rem;
+//             }
+//             .desc {
+//                 margin-bottom: 1rem;
+//                 a {
+//                     color: $primary-color;
+//                 }
+//             }
+//             .remember-me {
+//                 margin-bottom: 1rem;
+//                 md-checkbox {
+//                     margin: 0;
+//                 }
+//             }
+//             [dir=rtl] & md-input-container {
+//                 margin: 6px 0;
+//                 label {
+//                     backface-visibility: hidden;
+//                     font-size: 12px;
+//                 }
+//                 .md-input-message-animation {
+//                     font-size: 10px;
+//                 }
+//                 &.md-icon-right {
+//                     padding-left: 0;
+//                     >md-icon:last-of-type {
+//                         right: auto;
+//                         left: 4px;
+//                         top: 0px;
+//                         color: #aaa;
+//                         i.la {
+//                             font-size: 24px;
+//                             color: #555;
+//                         }
+//                     }
+//                 }
+//             }
+//             .submit {
+//                 display: inline-block;
+//             }
+//             .social-login {
+//                 float: left;
+//                 .md-button {
+//                     width: 70px;
+//                     height: 30px;
+//                     font-size: 20px;
+//                     border-radius: 20px;
+//                     display: inline-flex;
+//                     justify-content: center;
+//                     align-items: center;
+//                     backface-visibility: hidden;
+//                 }
+//             }
+//         }
+//     }
+// }
+// md-dialog.login {
+//     width: 850px;
+//     max-width: 100%;
+//     position: relative;
+//     height: 540px;
+//     perspective: 1000px;
+//     position: relative;
+//     box-shadow: none;
+//     background: rgba(0, 0, 0, 0);
+//     overflow: initial;
+//     @include respond-to(medium-and-down) {
+//         overflow: auto;
+//     }
+//     .front-card,
+//     .back-card {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: inherit;
+//         height: inherit;
+//         @include respond-to(medium-and-down) {
+//             width: 100%; // height: 100%;
+//         }
+//         transition: all 0.5s linear;
+//         backface-visibility: hidden;
+//         transition: all 0.4s ease-in-out;
+//         transform-style: preserve-3d;
+//         background: #fff;
+//         box-shadow: 0 7px 8px -4px rgba(0,
+//         0,
+//         0,
+//         .2),
+//         0 13px 19px 2px rgba(0,
+//         0,
+//         0,
+//         .14),
+//         0 5px 24px 4px rgba(0,
+//         0,
+//         0,
+//         .12);
+//     }
+//     .front-card {
+//         transform: rotateY(0deg);
+//     }
+//     .back-card {
+//         transform: rotatey(-180deg);
+//     }
+//     &.flliped {
+//         .front-card {
+//             transform: rotateY(180deg);
+//         }
+//         .back-card {
+//             transform: rotatey(0deg);
+//         }
+//     }
+// }

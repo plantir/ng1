@@ -1,11 +1,19 @@
+// {
+//   "compilerOptions": {
+//     "sourceMap": true,
+//     "noImplicitAny": true,
+//     "skipLibCheck": true,
+//     "lib": ["es6", "dom"]
+//   }
+// }
 {
   "compilerOptions": {
-    "sourceMap": true,
+    "outDir": "./dist/",
     "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
     "skipLibCheck": true,
-    "lib": [
-      "es6",
-      "dom"
-    ]
+    "lib": ["es6", "dom"]
   }
 }

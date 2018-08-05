@@ -1,0 +1,52 @@
+@import 'var';
+faq {
+    .innerpage .bread {
+        background-image: url('/assets/img/faq_bg.jpg');
+        &:after {
+            background-image: url('/assets/img/faq_icon.png');
+        }
+    }
+    .acordion {
+        margin-bottom: 24px;
+        >div:first-child>div {
+            border: 1px solid #e1e1e1;
+            display: flex;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.125rem;
+            box-sizing: content-box;
+            cursor: pointer;
+            h5 {
+                line-height: 2.225rem;
+                margin: 0;
+                padding: 1rem 0;
+            }
+            &.isOpen {
+                i.la:before {
+                    content: "\F28E"
+                }
+            }
+            i.la {
+                flex: 0 0 60px;
+                background-color: #f8f8f8f8;
+                margin-left: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.625rem;
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
+        >div:last-child {
+            display: none;
+            border: 1px solid #e1e1e1;
+            border-top: none;
+            padding: 20px 60px 20px 20px;
+            font-size: 1.175rem;
+            line-height: 2.225rem;
+            color: #666;
+            text-align: justify;
+        }
+    }
+}

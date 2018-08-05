@@ -1,0 +1,139 @@
+<!-- <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+<div class="header">
+  <div class="title">
+    <h3>ورود به کشینه</h3>
+    <i class="la la-close" ng-click="$ctrl.close()"></i>
+  </div>
+  <ul class="tab-nav">
+    <li ng-class="{active:$ctrl.selectedNav=='email'}">
+      <a ng-click="$ctrl.selectedNav = 'email'">
+        <span>ورود با ایمیل </span>
+      </a>
+    </li>
+    <li ng-class="{active:$ctrl.selectedNav=='mobile'}">
+      <a ng-click="$ctrl.selectedNav = 'mobile'">
+        <span>ورود با موبایل </span>
+      </a>
+    </li>
+    <li ng-class="{active:$ctrl.selectedNav=='google'}">
+      <a ng-click="$ctrl.selectedNav = 'google'">
+        <span>ورود با گوگل </span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div ng-if="$ctrl.selectedNav === 'email'" class="login-email">
+  <div class="form" ng-form="emailForm">
+    <div class="form-group">
+      <label>ایمیل</label>
+      <input class="form-control" placeholder="ایمیل خود را وارد کنید مثال example@example.com" type="email" name="email" ng-model="$ctrl.user.email"
+        ng-required="true">
+    </div>
+    <div class="form-group">
+      <label>رمز ورود</label>
+      <input class="form-control" placeholder="رمز عبور خود را وارد نمایید" type="{{password_view?'text':'password'}}" name="password"
+        ng-model="$ctrl.user.password" ng-required="true">
+      <i class="la la-eye" ng-class="{'la-eye-slash':password_view}" ng-click="password_view = !password_view"></i>
+    </div>
+    <div class="submit">
+      <md-button ng-disabled="emailForm.$invalid" ng-click="$ctrl.login()" class="md-raised md-primary md-block" aria-label="Login">
+        ورود </md-button>
+    </div>
+    <div class="remember-me" layout="row" layout-align="space-between center">
+      <md-checkbox>مرا به خاطر بسپار</md-checkbox>
+      <a class="secondary" ui-sref='forgot-password' ng-click="$ctrl.forgotPassword()">رمز عبور رو فراموش کردی؟</a>
+    </div>
+  </div>
+
+</div>
+<div ng-if="$ctrl.selectedNav === 'mobile'" class="login-mobile">
+  <div class="form" ng-form="mobileForm">
+    <div class="form-group">
+      <label>موبایل</label>
+      <input class="form-control" placeholder="شماره موبایل خود را وارد کنید مثال : ******۰۹۱۲" ng-pattern="/\d{11}$/" type="text"
+        name="mobile" ng-model="$ctrl.user.mobile" ng-required="true">
+      <div ng-messages="emailForm.mobile.$error">
+        <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+        <div ng-message="pattern">فرمت شماره موبایل اشتباه است</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>رمز ورود</label>
+      <input class="form-control" placeholder="رمز عبور خود را وارد نمایید" type="{{password_view?'text':'password'}}" name="password"
+        ng-model="$ctrl.user.password" ng-required="true">
+      <i class="la la-eye" ng-class="{'la-eye-slash':password_view}" ng-click="password_view = !password_view"></i>
+     
+    </div>
+    <div class="submit">
+      <md-button ng-disabled="mobileForm.$invalid" ng-click="$ctrl.login()" class="md-raised md-primary md-block" aria-label="Login">
+        ورود </md-button>
+    </div>
+    <div class="remember-me" layout="row" layout-align="space-between center">
+      <md-checkbox>مرا به خاطر بسپار</md-checkbox>
+      <a class="secondary" ui-sref='forgot-password' ng-click="$ctrl.forgotPassword()">رمز عبور رو فراموش کردی؟</a>
+    </div>
+  </div>
+</div>
+<div ng-if="$ctrl.selectedNav === 'google'" class="login-google">
+  <div class="form" ng-form="googleForm">
+    <div class="social-login">
+      <a ng-init='$ctrl.GoogleAuth()' class="google-auth">
+        با حساب کاربری خود در گوگل وارد شوید
+        <i class="la la-google-plus" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="signup">
+  حساب کاربری ندارید؟
+  <a class="secondary" ng-click="$ctrl.goRegister()">در کشینه عضو شوید</a>
+</div>  -->
+<div>
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div class="header-title">
+    <span>
+      ورود به کشینه
+    </span>
+    <i class="la la-close" ng-click="$ctrl.close()"></i>
+  </div>
+  <div class="register-container">
+    <div class="m-t-15" ng-form="$ctrl.loginForm">
+      <div class="form-group">
+        <label>موبایل / ایمیل</label>
+        <input class="form-control" placeholder="لطفا شماره موبایل یا آدرس ایمیل خود را وارد نمایید" type="text" name="mobile" ng-model="$ctrl.user.mobile"
+          ng-required="true" ui-validate="{pattern:'$ctrl.custom_validation($value)'}">
+        <div ng-if="$ctrl.loginForm.mobile.$dirty" ng-messages="$ctrl.loginForm.mobile.$error ">
+          <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+          <div ng-message="pattern">فرمت وارد شده باید شماره موبایل یا ایمیل باشد</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>رمز عبور</label>
+        <input class="form-control" placeholder="لطفا رمز عبور خود را وارد نمایید" type="password" name="password" ng-model="$ctrl.user.password"
+          ng-required="true">
+        <div ng-if="$ctrl.loginForm.password.$dirty" ng-messages="$ctrl.loginForm.password.$error">
+          <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+        </div>
+      </div>
+      <div vc-recaptcha on-create="$ctrl.captcha.setWidgetId(widgetId)" on-success="$ctrl.captcha.setResponse(response)" on-expire="$ctrl.captcha.cbExpiration()"
+        required="false">
+      </div>
+    </div>
+    <div class="submit">
+      <md-button ng-disabled="$ctrl.loginForm.$invalid" ng-click="$ctrl.captcha.check_recaptcha()" class="md-raised md-primary md-block" aria-label="Login">
+        ورود </md-button>
+    </div>
+    <div>
+      <div class="or"></div>
+      <div class="social-login">
+        <a ng-init='$ctrl.GoogleAuth()' class="google-auth">
+          با حساب کاربری خود در گوگل وارد شوید
+          <i class="la la-google-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="forget-password">
+      <a ui-sref='forgot-password' ng-click="$ctrl.forgotPassword()"> رمز عبور رو فراموش کردی؟</a>
+    </div>
+  </div>
+</div>

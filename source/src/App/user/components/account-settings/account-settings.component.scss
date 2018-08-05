@@ -1,0 +1,96 @@
+@import "var";
+account-settings {
+    position: relative;
+    display: block;
+    padding: 0 2rem;
+    .form-control {
+        border-radius: 45px;
+        height: 45px;
+    }
+    label {
+        padding-right: 1rem;
+        font-weight: 600;
+    }
+    .form {
+        >div+div {
+            margin-top: 2rem;
+        }
+        .form-row {
+            >div {
+                margin-top: 2rem;
+                @include respond-to(large) {
+                    margin-top: inherit;
+                }
+            }
+        }
+    }
+    .save-section {
+        padding: 2rem 0;
+        text-align: left;
+        .md-button {
+            width: 200px;
+        }
+    }
+    .birth-day {
+        align-items: center;
+        display: flex;
+        label {
+            padding: 0 1rem;
+        }
+        i.la {
+            font-size: 2.125rem;
+            margin-right: 0.6rem;
+            color: #888;
+        }
+    }
+    .image {
+        text-align: center;
+        img {
+            max-width: 100%;
+            border-radius: 100%;
+            width: 200px;
+            height: 200px;
+        }
+        padding-top: 30px;
+        .placeHolder {
+            width: 200px;
+            height: 200px;
+            background: #ebebeb;
+            border-radius: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            .plus {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                background: $primary-color;
+                border-radius: 100%;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3.175rem;
+            }
+        }
+        .action {
+            text-align: center;
+            margin-top: 2rem;
+            span {
+                cursor: pointer;
+                padding: 0 1rem;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.ng-jalaali-flat-datepicker-custom-select-box .ng-jalaali-flat-datepicker-custom-select {
+    height: 250px;
+    overflow: auto;
+}

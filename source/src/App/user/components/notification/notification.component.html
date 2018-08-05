@@ -1,0 +1,77 @@
+<div class="custom-title">
+  <h3>اعلان ها</h3>
+  <md-nav-bar md-selected-nav-item="$ctrl.currentNavItem" nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-click="$ctrl.setNav('all')" name="all" disabled>
+      همه
+    </md-nav-item>
+    <md-nav-item md-nav-click="$ctrl.setNav('notSeen')" name="notSeen" disabled>
+      اعلان های خوانده نشده
+    </md-nav-item>
+    <md-nav-item md-nav-click="$ctrl.setNav('seen')" name="seen" disabled>
+      اعلان های خوانده شده
+    </md-nav-item>
+  </md-nav-bar>
+</div>
+<div class="hide-gt-sm">
+  <div class="title">
+    <h3>اعلان ها</h3>
+  </div>
+  <div>
+    <md-select ng-model="$ctrl.currentNavItem" ng-change="$ctrl.setNav($ctrl.currentNavItem)">
+      <md-option value="all">
+        همه
+      </md-option>
+      <md-option value="notSeen">
+        اعلان های خوانده نشده
+      </md-option>
+      <md-option value="seen">
+        اعلان های خوانده شده
+      </md-option>
+    </md-select>
+  </div>
+</div>
+<div grid-data class="p-20" grid-options="$ctrl.gridOptions" grid-actions="$ctrl.gridActions" server-pagination="true">
+  <div>
+    <md-loading ng-if="$ctrl.gridOptions.loading"></md-loading>
+    <div class="hide" ng-model="status" filter-by="status" filter-type="text">
+
+    </div>
+    <div>
+      <ul class="data-grid">
+        <li grid-item>
+          <div ng-class="item.is_seen?'':'bold'">
+            <span class="grid-title">
+              <a ng-click="collapsed = !collapsed">
+                {{item.title}}
+              </a>
+            </span>
+
+            <span class="grid-sub-title">
+              {{item.created_at | persianDate | persianDigit}}
+            </span>
+            <div class="more_detial" collapsed="collapsed">
+              <p>
+                {{item.message}}
+              </p>
+              <md-button class="md-raised md-primary" ng-href="{{item.url}}" ng-click="$ctrl.seenNotification(item,false)">مشاهده جزییات</md-button>
+            </div>
+          </div>
+          <div class="grid-action">
+            <span ng-if="!item.is_seen">
+              <i ng-click="$ctrl.seenNotification(item,true)" class="la la-remove"></i>
+            </span>
+            <!-- <span>
+              <a  ng-click="collapsed = !collapsed">
+                <i class="la la-eye"></i>
+              </a>
+            </span> -->
+          </div>
+        </li>
+      </ul>
+      <div class="no-result" ng-if="filtered.length == 0">
+        موردی یافت نشد
+      </div>
+    </div>
+    <my-grid-pagination options="paginationOptions"></my-grid-pagination>
+  </div>
+</div>

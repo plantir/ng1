@@ -1,0 +1,110 @@
+<div class="title">
+  <h3>ویرایش اطلاعات</h3>
+</div>
+<div ng-form="settingForm" class="row" style="min-height:400px;">
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div class="col-lg-3">
+    <div class="image" flow-init="{singleFile:true}" flow-files-submitted="$flow.upload()" flow-file-success="$ctrl.assignImg('image', $message)">
+      <div>
+        <img ng-if="$ctrl.user.image" ng-src="{{$ctrl.user.image}}" alt="{{$ctrl.user.name + '-' + $ctrl.user.family}}" title="{{$ctrl.user.name + '-' + $ctrl.user.family}}">
+        <div ng-if="!$ctrl.user.image" class="placeHolder">
+          <span flow-btn class="plus">
+            <i  class="la la-plus"></i>
+          </span>
+        </div>
+      </div>
+      <div class="action">
+        <span ng-click="$ctrl.removeImg()">حذف</span>
+        |
+        <span class="" flow-btn>آپلود</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <div class="form">
+      <div class="form-row">
+        <div class="col-lg-6">
+          <label>نام</label>
+          <input ng-required="true" class="form-control" placeholder="نام خود را وارد نمایید" type="text" name="name" ng-model="$ctrl.user.name">
+        </div>
+        <div class="col-lg-6">
+          <label>نام خانوادگی</label>
+          <input class="form-control" placeholder="نام خانوادگی خود را وارد نمایید" type="text" name="family" ng-model="$ctrl.user.family">
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>آدرس ایمیل</label>
+          <input class="form-control" placeholder="ایمیل خود را وارد نمایید" type="email" name="email" ng-model="$ctrl.user.email"
+            ng-required="true">
+          <div ng-messages="settingForm.email.$error">
+            <div ng-message="email">فرمت ایمیل اشتباه است</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>کد ملی</label>
+          <input class="form-control" placeholder="کد ملی خود را وارد نمایید" type="text" ui-validate="{validate:'$ctrl.checkNationalCode($value)'}"
+            name="national_code" ng-model="$ctrl.user.national_code">
+          <div ng-messages="settingForm.national_code.$dirty && settingForm.national_code.$error">
+            <div ng-message="validate">فرمت کد ملی اشتباه است</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>شماره موبایل</label>
+          <input class="form-control" placeholder="شماره موبایل خود را وارد کنید مثال : ******۰۹۱۲" ng-pattern="/\d{11}$/" type="text"
+            name="mobile" ng-model="$ctrl.user.mobile" ng-required="true">
+          <div ng-messages="settingForm.mobile.$error">
+            <div ng-message="pattern">فرمت شماره موبایل اشتباه است</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>آدرس </label>
+          <input class="form-control" placeholder="آدرس پستی خود را وارد نمایید" type="text" name="address" ng-model="$ctrl.user.address">
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>شماره حساب</label>
+          <input ng-pattern="/\d+$/" placeholder="شماره حساب خود را بدون خط تیره وارد نمایید" class="form-control" type="text" name="account_number"
+            ng-model="$ctrl.user.account_number">
+          <div ng-messages="settingForm.account_number.$dirty && settingForm.account_number.$error">
+            <div ng-message="pattern">فرمت شماره حساب اشتباه است</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label>شماره کارت </label>
+          <input ng-pattern="/\d{16}$/" placeholder="شماره کارت خود را بدون خط تیره وارد نمایید" class="form-control" type="text" name="debit_card_number"
+            ng-model="$ctrl.user.bank_card_number">
+          <div ng-messages="settingForm.debit_card_number.$dirty && settingForm.debit_card_number.$error">
+            <div ng-message="pattern">فرمت شماره کارت اشتباه است</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group  birth-day">
+          <label>تاریخ تولد</label>
+          <input type="text" class="form-control" name="date" ng-jalaali-flat-datepicker datepicker-config="$ctrl.datepickerConfig"
+            gregorian-picked-date="$ctrl.user.birthDay" ng-model="$ctrl.user.birthDayJ">
+          <i class="la la-calendar" ng-jalaali-flat-datepicker datepicker-config="$ctrl.datepickerConfig"
+          gregorian-picked-date="$ctrl.user.birthDay" ng-model="$ctrl.user.birthDayJ"></i>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <md-checkbox ng-model="$ctrl.user.sms_enabled" name="sms_enabled" aria-label="sms_enabled">دریافت پیام کوتاه</md-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="save-section">
+  <md-button class="md-raised md-primary" aria-label="save" ng-disabled="settingForm.$invalid" ng-click="$ctrl.save()"> ثبت اطلاعات </md-button>
+</div>

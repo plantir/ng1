@@ -1,6 +1,8 @@
 .npmrc
 .tmp
 .vscode
+.env
 build
 node_modules
 public
+package-lock.json

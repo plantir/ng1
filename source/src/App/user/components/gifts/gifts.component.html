@@ -1,0 +1,69 @@
+<div class="gifts">
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div class="title">
+    <h3>هدیه های کشینه به شما</h3>
+  </div>
+  <div>
+    <div grid-data id='grid' grid-options="$ctrl.gridOptions" grid-actions="$ctrl.gridActions" server-pagination="true">
+      <div>
+        <md-loading ng-if="$ctrl.gridOptions.loading"></md-loading>
+        <div class="table-responsive">
+
+          <table>
+            <colgroup>
+              <col width="20%">
+              <col width="10%">
+              <col width="10%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  <span>اسپانسر</span>
+                </th>
+                <th>
+                  <span>دسته بندی</span>
+                </th>
+                <th>
+                  <span>کد</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr grid-item>
+                <td>{{item.voucher_sponser.name}}</td>
+                <td>{{item.voucher_category.name || '-'}}</td>
+                <td>
+                  <span ng-if="item.voucher.code">
+                    {{item.voucher.code}}
+                  </span>
+                  <a class="get-code" ng-if="!item.voucher.code" ng-click="$ctrl.selectVoucherCategory(item)">
+                    دریافت کد
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="no-result" ng-if="paginationOptions.total === 0">
+            موردی یافت نشد
+          </div>
+        </div>
+        <my-grid-pagination options="paginationOptions"></my-grid-pagination>
+      </div>
+    </div>
+  </div>
+  <div class="gap"></div>
+  <div class="select_category" ng-if="$ctrl.selcetCategory">
+    <div class="title">
+      <h3>انتخاب دسته بندی</h3>
+    </div>
+    <div class="form">
+      <md-loading ng-if="$ctrl.category_ajaxLoading"></md-loading>
+      <md-select class="md-no-underline" placeholder="لطفا یک دسته بندی انتخاب کنید" name="" ng-model="$ctrl.selcetCategory.voucher_category_id">
+        <md-option ng-repeat="item in $ctrl.categoryList" ng-value="item.id">{{item.name}}</md-option>
+      </md-select>
+      <md-button ng-disabled="!$ctrl.selcetCategory.voucher_category_id" class="md-raised md-primary" ng-click="$ctrl.getVoucher()">
+        دریافت کد
+      </md-button>
+    </div>
+  </div>
+</div>

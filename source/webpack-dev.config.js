@@ -1,13 +1,13 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.config.js');
-const DESTINATION = path.resolve( __dirname, '.tmp' );
-
+const DESTINATION = path.resolve(__dirname, '.tmp');
 module.exports = webpackMerge(commonConfig, {
-    devtool: 'cheap-module-source-map',
-
+    devtool: 'source-map',
+    mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, ".tmp"),
+        historyApiFallback: true,
         compress: true,
         port: 9000
     },
@@ -15,6 +15,6 @@ module.exports = webpackMerge(commonConfig, {
     output: {
         path: DESTINATION,
         filename: 'js/[name].js',
-        chunkFilename:'js/[name].js'
+        chunkFilename: 'js/[name].js'
     },
 });

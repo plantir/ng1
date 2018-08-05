@@ -1,0 +1,64 @@
+@import "var";
+reportage{
+    .reportage-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        >div{
+            width: 99%;
+            height: 360px;
+            border: 1px solid #bbb;
+            margin: .5%;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            @include respond-to(small){
+                width: 49%;
+            }    
+            @include respond-to(medium){
+                width: 32%;
+            }      
+            @include respond-to(xlarge){
+                width: 24%;
+            }    
+            @include respond-to(xxlarge){
+                width: 19%;
+
+            }    
+        }
+        .logo{
+            display: flex;
+            height: 60px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #bbb;
+            .bg-blue{
+                background: #3b79ac;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .image {
+            display: flex;
+            height: 245px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #bbb;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .title {
+            display: flex;
+            height: 55px;
+            padding: 0 10px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

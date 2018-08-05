@@ -1,5 +1,5 @@
 module.exports = {
     plugins: [
-        require('autoprefixer')
+        require('autoprefixer')('last 2 versions', 'ie 8')
     ]
 }

@@ -1,0 +1,222 @@
+@import 'var';
+[grid-data],
+.grid-table {
+    th:focus,
+    a:focus {
+        outline: none;
+    }
+    td,
+    th {
+        padding: 15px 5px;
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+        border-radius: 2px;
+    }
+    thead {
+        border: none;
+        th {
+            background: #f4f3fb;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+    tbody {
+        tr:nth-child(2n-1) {
+            td {
+                background: #fbfbfe;
+                ;
+            }
+        }
+        tr:hover {
+            td {
+                background: #f7f7fc;
+            }
+        }
+    }
+    .codepen-wrap {
+        margin-top: 15px;
+    }
+    .mdl-data-table {
+        width: 100%;
+        th {
+            cursor: pointer;
+        }
+    }
+    .mdl-data-table tr {
+        transition: none !important;
+    }
+    th md-select {
+        margin: 0;
+    }
+    .md-errors-spacer {
+        display: none;
+    }
+    .grid-top-section {
+        margin: 20px 0 30px 0;
+        .add-item {
+            text-align: left;
+            .md-button {
+                display: inline-flex;
+                border-radius: 60px;
+                padding: 0.15rem 1.7rem;
+                font-size: 1rem;
+                color: #fff;
+                background-color: #00c5dc;
+                border-color: #00c5dc;
+                box-shadow: 0px 5px 10px 2px rgba(0, 197, 220, 0.19);
+                i {
+                    margin-left: .3rem;
+                    font-size: 1.275rem;
+                }
+            }
+        }
+        .filter-section {
+            >div {
+                position: relative;
+                padding: 0 16px;
+                &:first-child {
+                    margin-right: -16px;
+                }
+            }
+            md-select{
+                color: #37474f;
+                position: relative;
+                height: 39px;
+                margin: 0;
+                padding-right: 8px;
+                font-weight: 400;
+                line-height: 17px;
+                cursor: pointer;
+                background: none 0 0 repeat scroll #eceff1;
+                border: 1px solid #d9d9d9;
+                border-radius: 5px;
+                min-width: 140px!important;
+                span.md-text,span.md-select-icon{
+                    color: #37474f;
+                }
+            }
+            input {
+                background-color: red;
+                border: 1px solid red;
+                color: red;
+                ;
+                display: block;
+                width: 100%;
+                padding: 0.65rem 1.25rem;
+                font-size: 1rem;
+                line-height: 1.25;
+                background-image: none;
+                background-clip: padding-box;
+                border-radius: 0.25rem;
+                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                padding-right: 2.9rem;
+                &:focus {
+                    background-color: red;
+                    border-color: red;
+                    color: red;
+                }
+            }
+            span.input-icon {
+                position: absolute;
+                height: 100%;
+                display: inline-block;
+                text-align: center;
+                top: 0;
+                width: 2.9rem;
+                right: 16px;
+                font-size: 1.4rem;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                color: red;
+                ;
+            }
+        }
+    } // .pagination {
+    //     padding: 0;
+    //     font-size: 0;
+    //     display: inline-block;
+    //     &>li {
+    //         display: inline-block;
+    //         vertical-align: middle;
+    //         height: 30px;
+    //         border: 1px solid $foregroundPagination;
+    //         border-left: 0;
+    //         &:first-child {
+    //             border-left: 1px solid $foregroundPagination;
+    //             border-radius: 2px 0 0 2px;
+    //         }
+    //         &:last-child {
+    //             border-radius: 0 2px 2px 0;
+    //         }
+    //     }
+    //     a {
+    //         color: $foregroundDefault;
+    //         font-size: 13px;
+    //         padding: 0 10px;
+    //         line-height: 30px;
+    //         display: inline-block;
+    //         text-decoration: none;
+    //     }
+    //     .active {
+    //         background: $backgroundActive;
+    //         border-color: $backgroundActive;
+    //         a {
+    //             color: $foregroundActive;
+    //         }
+    //     }
+    //     &-page {
+    //         &.active {
+    //             background: $backgroundActive;
+    //             a {
+    //                 color: $foregroundActive;
+    //             }
+    //         }
+    //     }
+    // }
+    .action {
+        a {
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            color: #575962;
+            transition: all 0.15s ease-in-out;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 1.3rem;
+            }
+            &:hover {
+                background: #00c5dc;
+                color: #fff;
+            }
+        }
+    }
+    [sortable] {
+        position: relative;
+        span.arrow {
+            &:after {
+                display: inline-block;
+                font: normal normal normal 16px/1 "LineAwesome";
+                font-size: inherit;
+                text-decoration: inherit;
+                text-rendering: optimizeLegibility;
+                text-transform: none;
+                color: $primary-color;
+                font-size: 1.1rem;
+            }
+        }
+        &.sort-ascent {
+            span.arrow:after {
+                content: "\f122";
+            }
+        }
+        &.sort-descent {
+            span.arrow:after {
+                content: "\f11f";
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "var";
+privacy-policy {
+    .innerpage .bread {
+        background-image: url('/assets/img/privacy_bg.jpg');
+        &:after {
+            background-image: url('/assets/img/privacy_icon.png');
+        }
+    }
+    .privacy {
+        padding: 3rem 2rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    h2 {
+        color: $secondary-color;
+        margin-bottom: 2rem;
+        font-weight: 600;
+    }
+    hr {
+        margin: 2rem 0;
+    }
+    p {
+        font-size: 1.125rem;
+        color: #333;
+        line-height: 2.175rem;
+        text-align: justify;
+        font-weight: 400;
+    }
+}

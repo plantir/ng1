@@ -1,0 +1,126 @@
+@import 'var';
+contact-us {
+    .map {
+        position: relative;
+        height: 650px;
+        @include respond-to(xsmall-and-down) {
+            height: auto;
+        }
+        ng-map {
+            height: 650px;
+            @include respond-to(xsmall-and-down) {
+                height: 400px;
+            }
+        }
+    }
+    .serve-list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -320px;
+        @include respond-to(xsmall-and-down) {
+            position: relative;
+            bottom: 0;
+        }
+        ul {
+            padding: 0;
+            background-color: #FFF;
+            overflow: hidden;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+            li {
+                list-style: none;
+                width: 33.333%;
+                float: left;
+                padding: 85px 60px;
+                text-align: center;
+                @include respond-to(xsmall-and-down) {
+                    width: 100%;
+                    float: none;
+                    padding: 25px 30px 0px;
+                }
+                i {
+                    width: 102px;
+                    height: 102px;
+                    line-height: 102px;
+                    text-align: center;
+                    font-size: 40px;
+                    border: 2px solid $primary-color;
+                    border-radius: 50%;
+                    margin-bottom: 32px;
+                    color: $primary-color;
+                    @include respond-to(xsmall-and-down) {
+                        margin-bottom: 2px;
+                    }
+                }
+                h3 {
+                    color: #333333;
+                    font-size: 1.325rem;
+                    font-weight: 500;
+                    margin-bottom: 32px;
+                    @include respond-to(xsmall-and-down) {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .contact-form {
+        [ng-form]>div {
+            margin-bottom: 1rem;
+        }
+        padding-top: 350px;
+        @include respond-to(xsmall-and-down) {
+            padding-top: 0;
+        }
+        background-image: url('/assets/img/contact_us_bg.jpg') no-repeat center bottom;
+        background-size: cover;
+        overflow: hidden;
+        .form-input {
+            width: 100%;
+            &:not(:last-child) {
+                padding-left: 6px;
+                @include respond-to(xsmall-and-down) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px 20px 20px 20px;
+            margin: 0;
+            line-height: 18px;
+            background: #ffffff;
+            border: 1px solid #cccccc !important;
+            border: none;
+            font-size: 15px;
+            transition: all ease-in 200ms;
+            box-shadow: none;
+            color: #888888;
+            border-radius: 26px;
+            &:focus {
+                outline: none;
+            }
+        }
+        .submit-form {
+            text-align: right;
+            .md-button {
+                min-width: 250px;
+                min-height: 50px;
+                border-radius: 26px;
+                margin: .5rem 0;
+                @include respond-to(xsmall-and-down) {
+                    min-width: 135px;
+                }
+                &+.md-button {
+                    margin-right: .725rem;
+                }
+            }
+        }
+        .form-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+}

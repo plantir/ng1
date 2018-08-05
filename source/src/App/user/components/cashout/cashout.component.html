@@ -1,0 +1,54 @@
+<div class="cashout">
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div class="title">
+    <h3>پرداخت های کشینه به شما</h3>
+  </div>
+  <div class="account-balance">
+    <div>
+      <span>مقدار اعتبار</span>
+      <span>{{$ctrl.account_balance | currency:"":0 | persianDigit}} تومان</span>
+    </div>
+    <div>
+      <span ng-if="$ctrl.canCashout" class="green-text"> قابل انتقال</span>
+      <span ng-if="!$ctrl.canCashout" class="red-text">غیر قابل انتقال</span>
+    </div>
+  </div>
+  <div class="gap"></div>
+  <div class="cashout-form" ng-form="cashoutForm">
+    <div class="title">
+      <h3>انتقال به حساب شما</h3>
+    </div>
+    <div class="payment">
+      <label for="">روش پرداخت</label>
+      <md-radio-group ng-model="$ctrl.payment.type">
+        <md-radio-button value="card"> کارت به کارت ( همراه با کارمزد بانک ) </md-radio-button>
+        <md-radio-button value="account">واریز به حساب شما</md-radio-button>
+      </md-radio-group>
+    </div>
+    <hr>
+    <div class="cashout-value p-t-40">
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label" for="">میزان انتقال</label>
+        <div class="col-sm-3 d-flex">
+          <input ng-model="$ctrl.payment.value" type="text" class="form-control"> تومان
+        </div>
+        <div>
+          <md-button ng-disabled="!$ctrl.canCashout || !$ctrl.payment.value" class="md-raised md-primary" aria-label="submit"> انتقال به حساب شما </md-button>
+        </div>
+      </div>
+    </div>
+    <div class="p-t-40 p-b-40">
+      برای راهنمایی بیشتر
+      <a ui-sref="static.terms">اینجا</a> کلیک کنید
+    </div>
+    <div class="gap"></div>
+    <div class="p-b-60 m-b-40">
+      <div class="title">
+        <h3>تاریخچه پرداخت ها</h3>
+      </div>
+      <div class="no-result">
+        موردی یافت نشد
+      </div>
+    </div>
+  </div>
+</div>

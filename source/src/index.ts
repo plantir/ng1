@@ -14,15 +14,14 @@ import './index.scss';
  * see: https://github.com/Microsoft/TypeScript/issues/10178
  */
 import * as angular from 'angular';
-
 /**
  *  Import module to be bootstrapped
  */
-import { moduleName as appModule } from './app/app.module';
+import { moduleName as appModule } from './App/app.module';
 
 /**
  * Bootstrap the application using the imported moduleName
  */
-const bootstrapModuleName = angular.module('application.bootstrap', [
-  appModule
-]).name;
+
+const bootstrapModuleName = angular.module('ng-app', [appModule]).name;
+angular.bootstrap($('#ng-app'), [bootstrapModuleName]);

@@ -1,0 +1,12 @@
+<div ng-if="$ctrl.promot_list.length">
+  <div class="single-promot">
+    <div class="promot-header">
+      پیشنهادهای لحظه‌ای برای شما
+    </div>
+    <div>
+      <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+      <div ng-if="!$ctrl.ajaxLoading" class="promot-body" items="$ctrl.promot_list" single-promot>
+      </div>
+    </div>
+  </div>
+</div>

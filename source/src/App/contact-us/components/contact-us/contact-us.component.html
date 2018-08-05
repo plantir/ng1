@@ -1,0 +1,73 @@
+<div class="container-2">
+
+  <div class="app-title">
+    <h1>
+      <span class="title-2">تماس با کشینه</span>
+    </h1>
+  </div>
+  <div class="map">
+
+    <div map-lazy-load="{{$ctrl.googleMapsUrl}}">
+      <ng-map center="{{$ctrl.Latitude}}, {{$ctrl.Longitude}}" zoom="16">
+        <marker icon="{
+      url:'/assets/img/map_marker.png',
+      scaledSize:[75,75]
+      }" position="[{{$ctrl.Latitude}}, {{$ctrl.Longitude}}]"></marker>
+      </ng-map>
+    </div>
+    <div class="container serve-list">
+      <ul class="clearfix">
+        <li class="center">
+          <i class="la la-map-marker"></i>
+          <h3>موقعیت ما</h3>
+          <p>تهران، سعادت آباد، چهارراه سرو، جنب بانک تجارت، ساختمان سروناز، پلاک ۷۲، واحد ۵</p>
+        </li>
+        <li class="center">
+          <i class="la la-envelope"></i>
+          <h3>ارسال ایمیل</h3>
+          <p>info@cashineh.com</p>
+        </li>
+        <li class="center">
+          <i class="la la-phone"></i>
+          <h3>تلفن تماس</h3>
+          <p>۰۲۱-۲۲۳۷۰۲۸۰</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="contact-form ">
+    <div class="container container-2">
+      <div class="app-title">
+        <h2>
+          <span class="title-2">فرم تماس با ما</span>
+        </h2>
+      </div>
+      <div class="form-info">
+        <span>با پر کردن فرم زیر شما می توانید مستقیم با تیم فنی کشینه ارتباط بر قرار کنید و مشکل خود را مطرح کنید.</span>
+      </div>
+      <div ng-form="$ctrl.contactForm">
+        <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+        <div layout="row" layout-xs="column" layout-align-xs="space-between center" layout-align="space-between center">
+          <div class="form-input" flex="33" flex-xs="100">
+            <input name="name" type="text" ng-model="$ctrl.contactUs.name" placeholder="نام و نام خانوادگی" ng-required="true">
+          </div>
+          <div class="form-input" flex="33" flex-xs="100">
+            <input name="phone" ng-pattern="/\d{11}$/" type="text" ng-model="$ctrl.contactUs.phone" placeholder="شماره تماس" ng-required="true">
+          </div>
+          <div class="form-input" flex="33" flex-xs="100">
+            <input name="email" type="email" ng-model="$ctrl.contactUs.email" placeholder="ایمیل" ng-required="true">
+          </div>
+        </div>
+        <div>
+          <textarea name="message" cols="30" rows="5" ng-model="$ctrl.contactUs.message" placeholder="متن پیغام" ng-required="true"></textarea>
+        </div>
+        <div class="submit-form">
+          <md-button ng-disabled="$ctrl.contactForm.$invalid" class="md-raised md-primary" ng-click="$ctrl.submit()" aria-label="submit">
+            ارسال </md-button>
+          <md-button ng-disabled="!$ctrl.contactForm.$dirty" class="md-raised md-primary" ng-click="$ctrl.reset()" aria-label="reset">
+            پاک کردن </md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

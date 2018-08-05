@@ -1,0 +1,289 @@
+.confirm-dialog {
+    >div {
+        padding: 10px 30px;
+        text-align: center;
+    }
+    .warning {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 20px auto;
+        position: relative;
+        box-sizing: content-box;
+        border: 4px solid #eea236;
+        .body {
+            position: absolute;
+            width: 5px;
+            height: 47px;
+            left: 50%;
+            top: 10px;
+            border-radius: 2px;
+            margin-left: -2px;
+            background-color: #f0ad4e;
+        }
+        .dot {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-left: -3px;
+            left: 50%;
+            bottom: 10px;
+            background-color: #f0ad4e;
+        }
+    }
+    .error {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 20px auto;
+        position: relative;
+        box-sizing: content-box;
+        border: 4px solid color('red', 'lighten-1');
+        .body {
+            position: absolute;
+            width: 4px;
+            height: 55px;
+            left: 50%;
+            top: 12px;
+            border-radius: 2px;
+            margin-left: -2px;
+            background-color: color('red', 'lighten-1');
+            transform: rotate(45deg)
+        }
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 55px;
+            left: 50%;
+            top: 14px;
+            border-radius: 2px;
+            margin-left: -2px;
+            background-color: color('red', 'lighten-1');
+            transform: rotate(-45deg)
+        }
+    }
+    .success {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 20px auto;
+        position: relative;
+        box-sizing: content-box;
+        border: 4px solid #4cae4c;
+        &:before,
+        &:after {
+            content: '';
+            border-radius: 50%;
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: white;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        &:after {
+            border-radius: 0 120px 120px 0;
+            top: -11px;
+            left: 30px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0px 60px;
+            transform-origin: 0px 60px;
+        }
+        &:before {
+            border-radius: 120px 0 0 120px;
+            top: -7px;
+            left: -33px;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 60px 60px;
+            transform-origin: 60px 60px;
+        }
+        &.animate::after {
+            animation: rotatePlaceholder 4.25s ease-in;
+        }
+        .placeholder {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(92, 184, 92, 0.2);
+            border-radius: 50%;
+            box-sizing: content-box;
+            position: absolute;
+            left: -4px;
+            top: -4px;
+            z-index: 2;
+        }
+        .line {
+            height: 5px;
+            background-color: #5cb85c;
+            display: block;
+            border-radius: 2px;
+            position: absolute;
+            z-index: 2;
+            &.tip {
+                width: 25px;
+                left: 14px;
+                top: 46px;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            &.long {
+                width: 47px;
+                right: 8px;
+                top: 38px;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+        }
+        .fix {
+            width: 5px;
+            height: 90px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 28px;
+            top: 8px;
+            z-index: 1;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        margin-top: 18px;
+        margin-bottom: 9px;
+    }
+    p {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 18px;
+    }
+    .btn {
+        font-size: 13px;
+        padding: 0 1rem;
+        height: 30px;
+        line-height: 32px;
+        &.confirm {
+            background-color: color('orange', 'base');
+        }
+        &.cancel {
+            background-color: #fff;
+            color: #000;
+        }
+        &.done {
+            background-color: color('blue', 'base');
+        }
+    }
+}
+
+@keyframes pulseWarning {
+    0% {
+        border-color: #F8D486;
+    }
+    100% {
+        border-color: #F8BB86;
+    }
+}
+
+.pulseWarning {
+    -webkit-animation: pulseWarning 0.75s infinite alternate;
+    animation: pulseWarning 0.75s infinite alternate;
+}
+
+@keyframes pulseWarningIns {
+    0% {
+        background-color: #F8D486;
+    }
+    100% {
+        background-color: #F8BB86;
+    }
+}
+
+.pulseWarningIns {
+    -webkit-animation: pulseWarningIns 0.75s infinite alternate;
+    animation: pulseWarningIns 0.75s infinite alternate;
+}
+
+@keyframes animateSuccessTip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+.animateSuccessTip {
+    -webkit-animation: animateSuccessTip 0.75s;
+    animation: animateSuccessTip 0.75s;
+}
+
+@keyframes animateSuccessLong {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}
+
+.animateSuccessLong {
+    -webkit-animation: animateSuccessLong 0.75s;
+    animation: animateSuccessLong 0.75s;
+}
+
+@keyframes rotatePlaceholder {
+    0% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    5% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    12% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+    }
+    100% {
+        transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+    }
+}

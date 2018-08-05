@@ -1,0 +1,59 @@
+<div>
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div class="header-title">
+    <span>
+      در کشینه عضو شوید و از هدایا زیر بهره مند شوید.
+    </span>
+  </div>
+  <div class="register-container">
+    <div class="m-t-5" ng-form="$ctrl.registerForm">
+      <div class="form-group">
+        <label>نام</label>
+        <input class="form-control" placeholder="لطفا نام خود را به فارسی وارد نمایید" type="text" name="name" ng-model="$ctrl.user.name"
+          ng-required="true">
+        <div ng-if="$ctrl.registerForm.name.$dirty" ng-messages="$ctrl.registerForm.name.$error">
+          <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>موبایل / ایمیل</label>
+        <input class="form-control" placeholder="لطفا شماره موبایل یا آدرس ایمیل خود را وارد نمایید" type="text" name="mobile" ng-model="$ctrl.user.mobile"
+          ng-required="true" ui-validate="{pattern:'$ctrl.custom_validation($value)'}">
+        <div ng-if="$ctrl.registerForm.mobile.$dirty" ng-messages="$ctrl.registerForm.mobile.$error ">
+          <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+          <div ng-message="pattern">فرمت وارد شده باید شماره موبایل یا ایمیل باشد</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>رمز عبور</label>
+        <input class="form-control" placeholder="لطفا رمز عبور خود را وارد نمایید" type="password" name="password" ng-model="$ctrl.user.password"
+          ng-required="true">
+        <div ng-if="$ctrl.registerForm.password.$dirty" ng-messages="$ctrl.registerForm.password.$error">
+          <div ng-message="required">پر کردن این فیلد اجباری می باشد</div>
+        </div>
+      </div>
+      <div vc-recaptcha on-create="$ctrl.captcha.setWidgetId(widgetId)" on-success="$ctrl.captcha.setResponse(response)" on-expire="$ctrl.captcha.cbExpiration()"
+        required="false">
+      </div>
+    </div>
+    <div class="submit">
+      <md-button ng-disabled="$ctrl.registerForm.$invalid || !$ctrl.condition" ng-click="$ctrl.captcha.check_recaptcha()" class="md-raised md-primary md-block"
+        aria-label="Login">
+        ثبت نام </md-button>
+    </div>
+    <div>
+      <div class="or"></div>
+      <div class="social-login">
+        <a ng-init='$ctrl.GoogleAuth()' class="google-auth">
+          با حساب کاربری خود در گوگل ثبت نام کنید
+          <i class="la la-google-plus" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="condition">
+      <md-checkbox ng-model="$ctrl.condition">
+        <a ui-sref="static.terms"> شرایط عضویت</a> را قبول دارم
+      </md-checkbox>
+    </div>
+  </div>
+</div>

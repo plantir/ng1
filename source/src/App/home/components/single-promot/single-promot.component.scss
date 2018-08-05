@@ -1,0 +1,120 @@
+@import 'var';
+single-promot {
+    display: block !important;
+    background: #fff;
+    height: 100%;
+    .single-promot {
+        background: #fff;
+    }
+    .promot-header {
+        height: 57px;
+        line-height: 56px;
+        font-weight: 500;
+        color: #6e6e6e;
+        margin: 0 13px;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        &:before {
+            height: 1px;
+            background: #f5f5f5;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: "";
+        }
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            box-shadow: 0 0 8px 0 hsla(0, 100%, 77%, .5);
+            border-top-style: solid;
+            border-width: 0;
+            border-top-width: 1px;
+            border-image-source: linear-gradient(90deg, #ffd3db, #fb3449);
+            border-image-slice: 1;
+            content: "";
+        }
+        &.is_active:after {
+            animation: Fb 7s infinite cubic-bezier(.17, .67, .71, .99);
+        }
+        &.is_pused:after {
+            animation-play-state: paused;
+        }
+    }
+    .promot-body {
+        margin: 0 auto;
+        overflow: hidden;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        position: unset;
+        padding-top: 3px;
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition: transform .5s;
+            box-sizing: content-box;
+        }
+        .image {
+            padding: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 310px;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .promot-desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            span {
+                margin: .3rem 0;
+            }
+            .title {
+                color: #333;
+                text-align: center;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 100%;
+            }
+            .old-price {
+                color: color('grey', 'base');
+                font-size: .875rem;
+                text-decoration: line-through;
+            }
+            .new-price {
+                color: color('green', 'base');
+                font-size: 1.275rem;
+                font-weight: bold;
+            }
+        }
+        .cashback {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@keyframes Fb {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%
+    }
+}

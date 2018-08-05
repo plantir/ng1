@@ -1,64 +1,48 @@
-# angularjs-webpack-starter
+# Cashineh Front-End application
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/frederikprijck/angularjs-webpack-starter.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/frederikprijck/angularjs-webpack-starter.svg?branch=master)](https://travis-ci.org/frederikprijck/angularjs-webpack-starter)
-[![Dependencies](https://david-dm.org/frederikprijck/angularjs-webpack-starter/status.svg)](https://david-dm.org/frederikprijck/angularjs-webpack-starter)
-[![DepDependencies](https://david-dm.org/frederikprijck/angularjs-webpack-starter/dev-status.svg)](https://david-dm.org/frederikprijck/angularjs-webpack-starter?type=dev)
-[![Coverage Status](https://coveralls.io/repos/frederikprijck/angularjs-webpack-starter/badge.svg?branch=master)](https://coveralls.io/r/frederikprijck/angularjs-webpack-starter?branch=master)
+1.  angularjs 1.7.2
+2.  typescript 3
+3.  webpack 4
+4.  angular material
+5.  bootstrap 4
+6.  flex box
+7.  scss
+8.  component base
+9.  ssr
+10. lazyLoad
 
-The goal of this repository is to demonstrate a modern frontend setup for [AngularJS](https://github.com/angular/angular.js) projects, in such a way that it gets closer to how things are done with Angular. This project is using [NPM](https://github.com/npm/npm) as package manager, [TypeScript](https://github.com/Microsoft/TypeScript) and [Webpack](https://github.com/webpack/webpack) as module loader.
+## Get the project
 
-This is, by no means, ment to be used blindly in production.
-
-## Features
-- [x] TypeScript 2
-- [x] TSLint
-- [x] @types
-- [x] Webpack 3 + Webpack dev server
-- [x] Karma + Jasmine
-- [ ] Protractor
-- [x] Styling using SASS
-- [x] NPM
-- [x] Code Coverage
-- [x] AngularJS 1.6
-- [x] UI Router 1+
-- [x] Strict DI using [ngAnnotate](https://github.com/olov/ng-annotate)
-- [x] Production build containing chunks
-
-## Usage
-To use this starter you can simply clone it to your prefered location by using
-
-```
- git clone https://github.com/frederikprijck/angularjs-webpack-starter.git <directory_name> --depth=1
- cd <directory_name>
+```bash
+  git pull origin master
 ```
 
-and install the dependencies
+## Setup
 
-```
- npm install
-```
+copy from .env.example to .env file and change content
 
-Once the repository has been cloned locally, you can use the following CLI commands:
+run npm install
 
-```
-npm start
-npm run build
-npm run test
-npm run test:coverage
+```bash
+  npm install
 ```
 
-To run the production build, use:
+## start Project for Dev
 
-```
-npm run build:dist
-```
-
-If you would like to test the production build by running `http-server`, use
-
-```
-npm run serve:dist
+```bash
+    npm start
 ```
 
-## Contributions
-Feel free to open an issue or create a PR.
+## build project
+
+```bash
+    npm run build
+```
+
+## serve project 
+
+after build command you must run serve command for serve project in ssr mode
+
+```bash
+    npm run serve
+```

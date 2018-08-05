@@ -1,0 +1,29 @@
+@import 'var';
+register-modal {
+    width: 460px;
+    max-width: 100%;
+    min-width: 100%;
+    .la-close{
+        position: absolute;
+        right: 24px;
+        top: 12px;
+        font-size: 1.35rem;
+        border: 2px solid #fff;
+        font-weight: bold;
+        border-radius: 100%;
+        padding: 3px;
+        cursor: pointer;
+        color: #fff;
+        z-index: 999;
+    }
+    .header-title{
+        padding: 1rem 50px !important;
+        @include respond-to(large){
+            padding: 1rem 70px !important;
+        }
+    }
+}
+
+md-dialog.register{
+    max-height: 90%;
+}

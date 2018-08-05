@@ -1,0 +1,9 @@
+@import 'responsive';
+@import 'color';
+$danger-color: #f4516c;
+$success-color: #34bfa3;
+$pending-color:#716aca;
+$cancel-color:#c4c5d6;
+$info-color:#36a3f7;
+$primary-color:color('blue', 'darken-1');
+$secondary-color:color('pink', 'base');

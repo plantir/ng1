@@ -1,0 +1,17 @@
+@import "var";
+app-header {
+    .header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: $primary-color;
+        background: #fff;
+        z-index: 99;
+        box-shadow: 0 0 15px 2px #aaa;
+    }
+}

@@ -1,0 +1,53 @@
+@import 'var';
+.owl-carousel {
+    .owl-dots {
+        height: 84px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .owl-dot {
+            width: 24px;
+            height: 24px;
+            background: #d7d7d7;
+            margin: 0 5px;
+            border-radius: 50%;
+            &.active {
+                background: #fff;
+            }
+        }
+    }
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 40%;
+        display: flex;
+        background: #333;
+        color: #fff;
+        border-radius: 50%;
+        opacity: .3;
+        padding: 6px;
+        transition: opacity .5s ease-in-out;
+        @include respond-to(xsmall-and-down) {
+            top: 25%;
+        }
+        i {
+            font-size: 3rem;
+            @include respond-to(xsmall-and-down) {
+                font-size: 2rem;
+            }
+        }
+        &:hover {
+            opacity: .7
+        }
+    }
+    .owl-prev {
+        right: 15px;
+    }
+    .owl-next {
+        left: 15px;
+    }
+    .owl-stage-outer:hover~.owl-nav>div {
+        opacity: .7
+    }
+}

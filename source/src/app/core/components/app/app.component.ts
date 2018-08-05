@@ -1,9 +1,10 @@
 /**
  * Import the Component styles
+ * <div class="app" ui-view></div>
+ *
+ *
  */
-import './app.component.scss';
-
 export class App implements angular.IComponentOptions {
     static selector = 'app';
-    static template = '<div class="app" ui-view></div>';
+    static template = `<app-header></app-header><div class="app" ui-view></div><app-footer><app-footer>`;
 }

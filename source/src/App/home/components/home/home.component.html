@@ -1,0 +1,178 @@
+<div>
+    <div class="not-login-header">
+        <div class="header-background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="header-text">
+                            <div class="first">
+                                <h1>تا ۴۰٪ از پول خرید های اینترنتی خود را پس بگیرید.</h1>
+                            </div>
+                            <div class="second hide-xs">
+                                <h2>
+                                    <ul>
+                                        <li>- هزاران فروشگاه اینترنتی</li>
+                                        <li>- عضویت رایگان</li>
+                                        <li>- کد تخفیف فروشگاه بامیلو</li>
+                                    </ul>
+                                </h2>
+                            </div>
+                            <div class="last hide-xs">
+                                <h3>فروشگاه های برتر با کم کردن هزینه تبلیغات خود این هزینه را مستقیما به شما پرداخت می کنند.
+                                </h3>
+                            </div>
+                            <!-- <ul>
+                                <li class="animated fadeInRightBig animated-delay-2">۱. ثبت نام کن</li>
+                                <li class="animated fadeInRightBig animated-delay-3">۲. فروشگاهت رو انتخاب کن و خرید کن</li>
+                                <li class="animated fadeInRightBig animated-delay-4">۳. درصدی از مبلغ خریدت رو نقد بگیر</li>
+                            </ul> -->
+                            <!-- <div class="signup_btn">
+                                <md-button ng-click="$ctrl.register()" class="md-raised md-accent" aria-label="button-label"> ثبت کاربری جدید در کشینه </md-button>
+                                <span class="signup_tag"></span>
+                            </div> -->
+                        </div>
+                        <div class="register-box">
+                            <home-register></home-register>
+                            <!-- <video width="600" controls>
+                                <source src="/assets/video/cashineh.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="our_customer">
+        <div class="container">
+            <div class="customer-container">
+                <div ng-repeat="item in $ctrl.ourCustomer">
+                    <div class="logo">
+                        <img ng-src="{{item.logo}}" alt="{{item.name}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="start_shopping">
+        <div class="container">
+            <div>
+                <div class="title">
+                    از طریق کشینه از فروشگاه محبوب خود خرید کنید
+                </div>
+                <div class="description">
+                    از محبوب ترین فروشگاهت خرید کن و تا ۴۰٪ از پولت رو پس بگیر.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>top </h1>
+        </div>
+    </div>
+
+</div>
+<div class="site-shortcut">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-around">
+                    <div class="register">
+                        <a ng-click="$ctrl.register()">
+                            <div class="icon"></div>
+                            <div class="text">ثبت نام</div>
+                        </a>
+                    </div>
+                    <div class="search">
+                        <a ui-sref="categories({id:'all'})">
+                            <div class="icon"></div>
+                            <div class="text">جستجوی کالا</div>
+                        </a>
+                    </div>
+                    <div class="basket">
+                        <a ng-click="$ctrl.login()">
+                            <div class="icon"></div>
+                            <div class="text">خرید کالا</div>
+                        </a>
+                    </div>
+                    <div class="wallet">
+                        <a ng-click="$ctrl.login()">
+                            <div class="icon"></div>
+                            <div class="text">بازپرداخت</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row m-t-30">
+        <div class="col-lg-12">
+            <h1>Top 2</h1>
+        </div>
+    </div>
+</div>
+</div>
+<div class="newest-merchants">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container-3">
+                    <h3 class="title">جدید ترین فروشگاه های کشینه</h3>
+                    <div class="d-flex justify-content-start">
+                        <div ng-repeat="merchant in $ctrl.newst_merchants">
+                            <a ui-sref="merchants-detail({id:merchant.id,name:merchant.name})">
+                                <div>
+                                    <div class="logo">
+                                        <img ng-src="{{merchant.logo}}" title="{{merchant.name}}" alt="{{merchant.name}}">
+                                    </div>
+                                    <div class="cashback">
+                                        <span class="value" ng-if="merchant.current_cashback_hint">{{merchant.current_cashback_hint}}</span>
+                                        <span class="value" ng-if="!merchant.current_cashback_hint">٪{{merchant.current_cashback_value | persianDigit}} </span>
+                                        <span>کشینه</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <span class="favorite" ng-click="$ctrl.toggleFavorite(merchant)">
+                                <i class="la" ng-class="merchant.is_favorite?'la-heart':'la-heart-o'"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row m-t-30">
+        <div class="col-lg-12">
+            <div class="container-3">
+                <h3 class="title">پیشنهادات دیگر کشینه</h3>
+                <div class="merchant-list-container class-C">
+                    <md-loading ng-if="!$ctrl.merchants.classC"></md-loading>
+                    <div>
+                        <div ng-repeat="merchant in $ctrl.merchants.classC">
+                            <a ui-sref="merchants-detail({id:merchant.id,name:merchant.name})">
+                                <div class="image">
+                                    <img ng-src="{{merchant.logo}}" class="md-card-image" title="{{merchant.name}}" alt="{{merchant.name}}">
+                                </div>
+                                <div class="cashback">
+                                    <span class="value" ng-if="merchant.current_cashback_hint">{{merchant.current_cashback_hint}}</span>
+                                    <span class="value" ng-if="!merchant.current_cashback_hint">٪{{merchant.current_cashback_value | persianDigit}} </span>
+                                    <span>کشینه</span>
+                                </div>
+                            </a>
+                            <span class="favorite" ng-click="$ctrl.toggleFavorite(merchant)">
+                                <i class="la" ng-class="merchant.is_favorite?'la-heart':'la-heart-o'"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

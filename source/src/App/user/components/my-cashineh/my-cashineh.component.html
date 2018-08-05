@@ -1,0 +1,62 @@
+<!-- <div class="innerpage"> -->
+<!-- <div class="bread">
+    <h1 class="title">شرایط استفاده و قوانین کشینه</h1>
+  </div> -->
+<div class="container">
+  <div class="my-cashineh">
+    <div>
+      <div class="user-navbar">
+        <div>
+          <h3>{{$ctrl.user.name}}</h3>
+        </div>
+        <div>
+          <a ng-click="$ctrl.changePassword()">تغییر رمز</a>
+          |
+          <a ng-click="$ctrl.logout()">خروج</a>
+        </div>
+      </div>
+      <div class="">
+        <ul class="tab-nav">
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.account-settings">
+              <i class="la la-user"></i>
+              <span>ویرایش اطلاعات </span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.favorite-merchant">
+              <i class="la la-heart"></i>
+              <span>فروشگاه های من</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.transactions">
+              <i class="la la-money"></i>
+              <span>کشینه شما</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.cashout">
+              <i class="la la-bank"></i>
+              <span>پرداخت های کشینه به شما</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.gifts">
+              <i class="la la-gift"></i>
+              <span>هدیه ها</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="my-cashineh.notifications">
+              <i class="la la-bell"></i>
+              <span>اعلان ها</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div ui-view></div>
+  </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,60 @@
+<div class="p-40">
+  <md-loading ng-if="$ctrl.ajaxLoading"></md-loading>
+  <div>
+    <div ng-if="$ctrl.status ==='email'">
+
+      <div class="error-message">
+        <h6>کاربر گرامی حساب شما هنوز تایید نشده است لطفا حساب خود را از طریق ایمیلی که از طرف کشینه برای شما ارسال شده است تایید
+          کنید
+        </h6>
+      </div>
+      <div class="center-align m-t-20">
+        <p>ایمیلی دریافت نکرده اید؟ پوشه اسپم را هم چک کنید در صورتی که ایمیلی از طرف کشینه برای شما ارسال نشده بود روی دکمه
+          زیر کلیک کنید</p>
+        <p>ایمیل خود را اشتباه وارد کردید؟ از طریق باکس زیر میتونید ایمیل خود را تغییر دهید</p>
+        <div class="form-group">
+          <input ng-model="$ctrl.user.email" class="form-control change-mail"  type="text">
+        </div>
+        <md-button class="md-raised md-primary " aria-label="reSendEmail" ng-click="$ctrl.resendEmail()"> ارسال مجدد ایمیل </md-button>
+        <md-button class="md-raised md-primary " aria-label="changeEmail" ng-click="$ctrl.changeEmail()"> تغییر ایمیل </md-button>
+      </div>
+    </div>
+    <div class="moblie-section" ng-if="$ctrl.status ==='mobile'">
+
+      <div class="error-message">
+        <h6>کاربر گرامی حساب شما هنوز تایید نشده است لطفا حساب خود را از طریق کدی که از طرف کشینه برای شما ارسال شده است تایید
+          کنید
+        </h6>
+      </div>
+      <div class="m-t-20">
+        <div class="form-group">
+          <label for="">کد تایید را وارد نمایید</label>
+          <input placeholder="- - - -" type="text" ng-model="$ctrl.token" class="form-control">
+          <div ng-messages="$ctrl.tokenError">
+            <div ng-message="invalid">کد وارد شده صحیح نیست</div>
+          </div>
+        </div>
+        <div class="message">
+          ارسال SMS ممکن است چند دقیقه طول بکشد.</br>
+          <a ng-click="$ctrl.resendSMS()">ارسال مجدد SMS</a>
+        </div>
+        <div class="form-group center-align">
+          <md-button ng-disabled="$ctrl.token.length != 4" class="md-raised md-primary" ng-click="$ctrl.sendToken()" aria-label="reSend">
+            تایید </md-button>
+          <!-- <md-button class="md-raised md-primary" ng-click="$ctrl.resendSMS()" aria-label="reSend"> ارسال مجدد کد </md-button> -->
+        </div>
+      </div>
+    </div>
+    <div class="p-40" ng-if="$ctrl.status == 'finish'">
+      <div class="success-message">
+        <h6>حساب شما تایید شد در حال انتقال به حساب کاربری ...
+        </h6>
+      </div>
+    </div>
+    <div class="p-40" ng-if="$ctrl.status == 'error'">
+      <div class="error-message">
+        <h6>{{$ctrl.message}}</h6>
+      </div>
+    </div>
+  </div>
+</div>

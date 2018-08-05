@@ -1,0 +1,59 @@
+@import 'var';
+$pagination-color: color('deep-purple', 'lighten-1'); // #716aca;
+$pagination-backgrond: color('deep-purple', 'lighten-5');
+$pagination-backgrond-hover: color('deep-purple', 'lighten-4');
+.pagination .pagination-first a:hover {
+    background: #deddf3;
+}
+
+.pagination {
+    direction: ltr;
+    li {
+        margin-right: 5px;
+        i{
+            font-size: 1rem;
+        }
+        a {
+            cursor: pointer;
+            display: inline-block;
+            height: 2.25rem;
+            width: 2.25rem;
+            vertical-align: middle;
+            padding: 0;
+            border-radius: 50%;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1rem;
+            line-height: 1rem;
+            font-weight: 400;
+            color: #898b96;
+            &:hover {
+                background: $pagination-backgrond-hover;
+            }
+        }
+        &.active {
+            background: none;
+            a {
+                color: #fff;
+                background: $pagination-color;
+            }
+        }
+    }
+    .pagination-first,
+    .pagination-last,
+    .pagination-next,
+    .pagination-prev {
+        a {
+            color: $pagination-color;
+            background: $pagination-backgrond;
+            &:hover {
+                background: $pagination-backgrond-hover;
+            }
+        }
+    }
+}

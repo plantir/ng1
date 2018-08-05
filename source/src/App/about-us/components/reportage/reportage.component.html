@@ -1,0 +1,13 @@
+<div class="">
+  <div class="reportage-container">
+    <div ng-repeat="item in $ctrl.reportage_list">
+      <div class="logo">
+        <img ng-class="{'bg-blue':item.logo.includes('svg')}" ng-src="{{item.logo}}" alt="">
+      </div>
+      <div class="image">
+        <img ng-src="{{item.image}}" alt="{{item.title}}">
+      </div>
+      <div class="title">{{item.title}}</div>
+    </div>
+  </div>
+</div>  

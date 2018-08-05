@@ -1,0 +1,55 @@
+@import 'var';
+active-user {
+    .error-message {
+        background: color('red', 'lighten-4');
+        padding: 2rem;
+        text-align: center;
+        color: color('red', 'darken-4');
+        border: 1px solid color('red', 'darken-4');
+        width: 900px;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+    .success-message {
+        background: color('green', 'lighten-4');
+        padding: 2rem;
+        text-align: center;
+        color: color('green', 'darken-4');
+        border: 1px solid color('green', 'darken-4');
+        width: 700px;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+    .change-mail{
+        width: 450px;
+        margin: 0 auto;
+    }
+    .moblie-section {
+        .message{
+            
+            max-width: 320px;
+            margin: 1rem auto;
+            text-align: center;
+
+            a{
+                color: $primary-color;
+            }
+        }
+        .form-group {
+            max-width: 320px;
+            margin: 0 auto;
+            label {
+                padding-right: .5rem;
+            }
+            input {
+                border-radius: 45px;
+                text-align: center;
+            }
+            + .form-group{
+                margin-top: 20px;
+            }
+        }
+    }
+}

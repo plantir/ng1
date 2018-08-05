@@ -1,0 +1,97 @@
+<div class="custom-title">
+  <h3>کشینه شما</h3>
+  <md-nav-bar md-selected-nav-item="$ctrl.currentNavItem" nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-click="$ctrl.setNav('all')" name="all" disabled>
+      تراکنش های شما
+    </md-nav-item>
+    <md-nav-item md-nav-click="$ctrl.setNav('pending')" name="pending" disabled>
+      کشینه در حال بررسی
+    </md-nav-item>
+    <md-nav-item md-nav-click="$ctrl.setNav('approve')" name="approve" disabled>
+      کشینه تایید شده
+    </md-nav-item>
+  </md-nav-bar>
+</div>
+<div class="hide-gt-sm">
+  <div class="title">
+    <h3>کشینه شما</h3>
+  </div>
+  <div>
+    <md-select ng-model="$ctrl.currentNavItem" ng-change="$ctrl.setNav($ctrl.currentNavItem)">
+      <md-option value="all">
+        تراکنش های شما
+      </md-option>
+      <md-option value="pending">
+        کشینه در حال بررسی
+      </md-option>
+      <md-option value="approve">
+        کشینه تایید شده
+      </md-option>
+    </md-select>
+  </div>
+</div>
+<div grid-data class="p-20" grid-options="$ctrl.gridOptions" grid-actions="$ctrl.gridActions" server-pagination="true">
+  <div>
+    <md-loading ng-if="$ctrl.gridOptions.loading"></md-loading>
+    <div class="hide" ng-model="status" filter-by="status" filter-type="text">
+
+    </div>
+    <div class="table-responsive">
+      <table>
+        <colgroup>
+          <col width="10%">
+          <col width="20%">
+          <col width="10%">
+          <col width="10%">
+          <col width="10%">
+
+        </colgroup>
+        <thead>
+          <tr>
+            <th sortable="source_type">
+              <span>مربوط به</span>
+              <span class="arrow"></span>
+            </th>
+            <th>
+              توضیحات
+            </th>
+            <th sortable="value">
+              <span>مقدار</span>
+              <span class="arrow"></span>
+            </th>
+            <th sortable="status">
+              <span>وضعیت</span>
+              <span class="arrow"></span>
+            </th>
+            <th sortable="created_at">
+              <span>تاریخ ایجاد</span>
+              <span class="arrow"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr grid-item>
+            <td class="source_type">
+              <span class="status" ng-class="'status-'+item.source_type">{{item.source_type | enum:'source_type'}}</span>
+            </td>
+            <td>{{item.description}}</td>
+            <td ng-class="item.value_status==1?'green-text':'red-text'">
+              <span>{{item.value_status==1?'+':'-'}}</span>
+              <span>
+                {{item.value | currency:"":0 | persianDigit}} تومان
+              </span>
+            </td>
+            <td class="transaction_status">
+              <span class="status" ng-class="'status-'+item.status">{{item.status | enum:'transaction_status'}}</span>
+            </td>
+            <td>{{item.created_at | persianDate | persianDigit}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="no-result" ng-if="filtered.length == 0">
+        موردی یافت نشد
+      </div>
+    </div>
+    <my-grid-pagination options="paginationOptions"></my-grid-pagination>
+  </div>
+</div>

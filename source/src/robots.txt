@@ -1,0 +1,15 @@
+user-agent: *
+disallow: /my-cashineh
+disallow: /shopping-trip?
+disallow: /r/*
+disallow: /activeuser
+
+allow: /merchants/*
+allow: /categories/*
+allow: /blog/*
+allow: /*
+
+sitemap: https://cashineh.com/sitemap_static.xml
+sitemap: https://cashineh.com/sitemap_merchants.xml
+sitemap: https://cashineh.com/sitemap_categories.xml
+sitemap: https://cashineh.com/blog/sitemap_index.xml

@@ -1,0 +1,40 @@
+@import 'var';
+gifts{
+    .get-code{
+        color: $secondary-color !important;
+        border-bottom: 1px solid $secondary-color;
+    }
+    .gap {
+        background: #ebebeb;
+        height: 16px;
+        margin: 0 -2rem;
+    }
+    div.select_category{
+        padding-bottom: 3rem;
+        md-select{
+            color: #37474f;
+            width: 300px;
+            position: relative;
+            height: 39px;
+            margin: 0;
+            padding-right: 8px;
+            font-weight: 400;
+            line-height: 17px;
+            cursor: pointer;
+            background: none 0 0 repeat scroll #eceff1;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            min-width: 140px!important;
+            span.md-text,span.md-select-icon{
+                color: #37474f;
+            }
+        }
+        .form{
+            display: flex;
+            align-items: center;
+            .md-button{
+                border-radius: 5px;
+            }
+        }
+    }
+}

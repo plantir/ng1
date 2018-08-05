@@ -1,0 +1,113 @@
+<footer>
+  <section class="main-footer">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 addressbar">
+          <h5 class="title">ارتباط با کشینه</h5>
+          <ul>
+            <li>
+              <i class="la la-map-marker"></i>
+              <span>تهران، سعادت آباد، چهارراه سرو، جنب بانک تجارت، ساختمان سروناز، پلاک ۷۲، واحد ۵</span>
+            </li>
+            <li>
+              <i class="la la-phone"></i>
+              <span>{{'021' | persianDigit}}-{{'22370280' | persianDigit}}</span>
+            </li>
+            <li>
+              <i class="la la-envelope"></i>
+              <span>info@cashineh.com</span>
+            </li>
+
+          </ul>
+          <div ng-form="newsletterForm" class="newsletterForm">
+            <input type="email" ng-required="true" name="email" placeholder="لطفا ایمیل خود را وارد کنید" ng-model="$ctrl.email" class="newsletter-field">
+            <button ng-disabled="newsletterForm.$invalid" type="button" class="newsletter-button" ng-click="$ctrl.addToNewsletter($ctrl.email,$event)">
+              اشتراک
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-4 quicklinks">
+          <h5 class="title">لینک های سریع </h5>
+          <ul class="">
+            <li>
+              <a ui-sref="about-us">درباره کشینه</a>
+            </li>
+            <li>
+              <a ui-sref="terms">شرایط استفاده و قوانین کشینه</a>
+            </li>
+            <li>
+              <a ui-sref="contact-us">تماس با ما</a>
+            </li>
+            <li>
+              <a ui-sref="faq">پرسش های متداول کشینه</a>
+            </li>
+            <li>
+              <a ui-sref="privacy-policy">حفظ حریم خصوصی</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-around align-items-center">
+          <div class="enamad">
+            <div style="position:Relative; left:1%; bottom:2%; float:left; border:1px #d8d8da solid; background:#FFF; padding:7px; border-radius:10px; font-family:tahoma; font-size:11px;">
+              <div>
+                <center>نماد اعتماد الکترونيکي</center>
+                <img id='brgwgwmdnbpexlapgwmd' style='cursor:pointer' onclick='window.open("https://trustseal.enamad.ir/Verify.aspx?id=69239&p=hwmbjzpgwkynfuixjzpg", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")'
+                  alt='' src='https://trustseal.enamad.ir/logo.aspx?id=69239&p=kzoezpfvqesgvjymzpfv' />
+
+              </div>
+            </div>
+          </div>
+          <div class="samandehi">
+            <div style="position:Relative; left:1%; bottom:2%; float:left; border:1px #d8d8da solid; background:#FFF; padding:7px; border-radius:10px; font-family:tahoma; font-size:11px;">
+              <div>
+                <center>نماد ساماندهی</center>
+                <img id='jxlzjxlzesgtapfujxlznbqe' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=110512&p=rfthrfthobpddshwrfthuiwk", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")'
+                  alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=110512&p=nbpdnbpdlymaujynnbpdodrf' />
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center m-t-35">
+        <div class="social-icon">
+          <div class="d-flex justify-content-center flex-wrap">
+            <a href="https://t.me/Cashineh" target="_blank">
+              <md-icon md-svg-src="telegram" aria-label="label"></md-icon>
+            </a>
+            <a href="https://www.instagram.com/cashineh.official/" target="_blank">
+              <i class="la la-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/cashineh" target="_blank">
+              <i class="la la-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href=" https://www.facebook.com/Cashineh" target="_blank">
+              <i class="la la-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#">
+              <i class="la la-pinterest-p" aria-hidden="true"></i>
+            </a>
+            <a href=" https://twitter.com/cashineh" target="_blank">
+              <i class="la la-twitter" aria-hidden="true"></i>
+            </a>
+            <a href=" https://www.youtube.com/channel/UCi4ujEBvx53Ujruq6UksaDA" target="_blank">
+              <i class="la la-youtube-play" aria-hidden="true"></i>
+            </a>
+            <a href=" https://plus.google.com/107182693483487033379" target="_blank">
+              <i class="la la-google-plus" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.aparat.com/cashineh" target="_blank">
+              <md-icon md-svg-src="aparat" aria-label="label"></md-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bottom-footer">
+    <div class="d-flex justify-content-center p-t-25 p-b-25">
+      © کلیه حقوق این وب سایت متعلق به شرکت کاراشید پردیس می باشد.
+    </div>
+  </section>
+</footer>

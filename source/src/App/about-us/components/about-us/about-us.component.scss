@@ -1,0 +1,25 @@
+@import "var";
+about-us {
+    .innerpage .bread {
+        background-image: url('/assets/img/about-us_bg.jpg');
+        &:after {
+            background-image: url('/assets/img/about-us_icon.png');
+        }
+    }
+    .about-text {
+        padding: 2rem 5rem;
+    }
+    h2 {
+        font-size: 1.325rem;
+        font-weight: 500;
+        color: $secondary-color;
+    }
+    p {
+        margin-bottom: 45px;
+        font-size: 1.125rem;
+        color: #333;
+        line-height: 2.175rem;
+        text-align: justify;
+        font-weight: 400;
+    }
+}

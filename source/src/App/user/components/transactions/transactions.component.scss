@@ -1,0 +1,103 @@
+@import 'var';
+transactions {
+    .custom-title {
+        display: none;
+        @include respond-to(medium){
+            position: relative;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        md-nav-bar {
+            width: 100%;
+            ._md-nav-bar-list {
+                justify-content: flex-end;
+            }
+        }
+        h3 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+        }
+    }
+}
+
+// orders {
+//     .table {
+//         tbody {
+//             tr {
+//                 td {
+//                     padding: 1rem 0;
+//                     .delivery,
+//                     .payment {
+//                         padding: 0.3rem .5rem;
+//                         border-radius: .5rem;
+//                         color: #fff;
+//                         min-width: 84px;
+//                         display: inline-block;
+//                     }
+//                     .delivery {
+//                         &.status-0 {
+//                             background-color: #f44336;
+//                         }
+//                         &.status-1 {
+//                             background-color: #ff9800;
+//                         }
+//                         &.status-2 {
+//                             background-color: #03a9f4;
+//                         }
+//                         &.status-3 {
+//                             background-color: #673ab7;
+//                         }
+//                         &.status-4 {
+//                             background-color: yellow;
+//                         }
+//                         &.status-5 {
+//                             background-color: #4caf50;
+//                         }
+//                         &.status-6 {
+//                             background-color: #c62828;
+//                         }
+//                     }
+//                     .payment {
+//                         &.status-0 {
+//                             background-color: #f44336;
+//                         }
+//                         &.status-1 {
+//                             background-color: #ff9800;
+//                         }
+//                         &.status-2 {
+//                             background-color: #4caf50;
+//                         }
+//                     }
+//                     a {
+//                         color: #333;
+//                         transition: color .5s;
+//                         i.zmdi {
+//                             font-size: 1.5rem;
+//                             vertical-align: middle;
+//                         }
+//                         &:hover {
+//                             color: #F26522
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         td,
+//         th {
+//             vertical-align: middle;
+//             text-align: center;
+//         }
+//     }
+//     .table-responsive table {
+//         @include respond-to(small-and-down) {
+//             width: 750px;
+//         }
+//     }
+// }
