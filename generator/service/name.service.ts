@@ -8,19 +8,10 @@ export interface I%nameUpper% {
     email?: string;
     message?: string;
 }
-export interface I%nameUpper%Short {
-    name ?: string;
-    email ?: string;
-    message ?: string;
-}
-export interface I%nameUpper%Full extends I%nameUpper%Short {
-    name ?: string;
-    email ?: string;
-    message ?: string;
-}
+
 export interface I%nameUpper%Service {
-    get(): IPromise<{ message: string; data: I%nameUpper%Full; status: number }>;
-    save(data: I%nameUpper%Full): IPromise<{ message: string; I%nameUpper%Full: string; status: number }>;
+    get(id:number): IHttpPromise<I%nameUpper%>;
+    save(data: I%nameUpper%): IHttpPromise<I%nameUpper%>;
 }
 export class %nameUpper%Service {
     static selector = '$%name%';
@@ -28,12 +19,10 @@ export class %nameUpper%Service {
         'ngInject';
     }
 
-    async save(data: I%nameUpper%Full) {
-        try {
-            let response = await this.$http.post(`${this.myConstant.ApiUrl}/%name%`, data);
-            return response.data;
-        } catch (error) {
-            return error;
-        }
+    get(id:number) {
+        return  this.$http.get(`${this.myConstant.ApiUrl}/%name%/${id}`);
+    }
+    save(data:I%nameUpper% ) {
+        return this.$http.post(`${this.myConstant.ApiUrl}/%name%`, data);
     }
 }
