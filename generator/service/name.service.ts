@@ -12,7 +12,7 @@ export interface I%nameUpper%Service {
 
 export class %nameUpper%Service {
     static selector = '$%selectorName%';
-    constructor(private $http: ng.IHttpService, private myConstant: IMyConstant) { 
+    constructor(private $http: ng.IHttpService, private myConstant: IMyConstant) {
         'ngInject';
     }
 
