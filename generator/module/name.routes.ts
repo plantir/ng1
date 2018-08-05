@@ -1,4 +1,3 @@
-
 export const routing = ($stateProvider: angular.ui.IStateProvider) => {
     'ngInject';
     $stateProvider
