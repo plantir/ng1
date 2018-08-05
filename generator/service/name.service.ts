@@ -1,7 +1,8 @@
 import { IMyConstant } from '../../core/core.constant';
 import { IHttpPromise } from 'angular';
+
 export interface I%nameUpper% {
-    id:number;
+    id: number;
 }
 
 export interface I%nameUpper%Service {
@@ -11,7 +12,7 @@ export interface I%nameUpper%Service {
 
 export class %nameUpper%Service {
     static selector = '$%selectorName%';
-    constructor(private $http: ng.IHttpService, private $q: ng.IQService, private myConstant: IMyConstant) { 
+    constructor(private $http: ng.IHttpService, private myConstant: IMyConstant) { 
         'ngInject';
     }
 
