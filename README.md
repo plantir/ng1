@@ -15,8 +15,12 @@ npm i
 npm start
 </pre>
 open localhost:9000
-
-
+ 
+for create module:
+<pre>
+ng1 g m contact-us 
+</pre>
+this make a module and a route in folder src/app/contact-us
 
 for create component:
 <pre>
@@ -25,21 +29,14 @@ ng1 g c contact-us/components/test
 this make a test component in folder src/app/contact-us/components
 
 
-for create module:
-<pre>
-ng1 g m contact-us 
-</pre>
-this make a module and a route in folder src/app/contact-us
-
-
 for create Service:
 <pre>
-ng1 g s contact-us 
+ng1 g s contact-us/contact-us 
 </pre>
 this make a Service in folder src/app/contact-us
 
 for create Factory:
 <pre>
-ng1 g f contact-us 
+ng1 g f contact-us/contact-us 
 </pre>
 this make a Factory in folder src/app/contact-us
