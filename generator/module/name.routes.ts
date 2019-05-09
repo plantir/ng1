@@ -1,9 +1,8 @@
-export const routing = ($stateProvider: angular.ui.IStateProvider) => {
+import { ResourceRouting } from '../../Helper/ts/resource_route';
+
+export class Routing extends ResourceRouting {
+  constructor($stateProvider: ng.ui.IStateProvider) {
     'ngInject';
-    $stateProvider
-        .state({
-            name: '%name%',
-            url: '/%name%',
-            template: '<div ui-view></div>'
-        });
-};
+    super($stateProvider, '%name%');
+  }
+}

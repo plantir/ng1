@@ -1,4 +1,4 @@
-import { IMyConstant } from '../../core/core.constant';
+import { IMyConstant } from '../core/core.constant';
 
 export interface I%nameUpper% extends ng.resource.IResource <I%nameUpper%> {
     id: number;
@@ -9,10 +9,10 @@ export interface I%nameUpper%Resource extends ng.resource.IResourceClass <I%name
 }
 
 export class %nameUpper%Factory {
-    static selector = '$%nameUpper%';
+    static selector = '$%name%';
     static resource($resource: ng.resource.IResourceService, myConstant: IMyConstant): I%nameUpper%Resource {
         'ngInject';
-        return <I%nameUpper%Resource> $resource(myConstant.ApiUrl + '/%name%/:id', { id: '@id' }, {
+        return <I%nameUpper%Resource> $resource(myConstant.ApiUrl + '/admin/%name%/:id', { id: '@id' }, {
             query: {
                 method: 'GET',
                 isArray: false
